@@ -23,7 +23,9 @@
 
 namespace StringExtensions
 {
+    using System.Globalization;
     using System.Text;
+    using System.Text.RegularExpressions;
 
     /// <summary>
     /// Class to provide string extension methods
@@ -269,6 +271,176 @@ namespace StringExtensions
         public static bool IsAlpha(this string value)
         {
             return !string.IsNullOrEmpty(value) && value.All(ch => char.IsLetter(ch));
+        }
+
+        /// <summary>
+        /// Converts a string to an Int16 value.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>The Int16 value represented by the string.</returns>
+        public static short ToInt16(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("The input string must not be null or empty.");
+            }
+
+            if (short.TryParse(value, out var result))
+            {
+                return result;
+            }
+
+            throw new FormatException("The input string is not in a valid format for an Int16 value.");
+        }
+
+        /// <summary>
+        /// Converts a string to an Int32 value.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>The Int32 value represented by the string.</returns>
+        public static int ToInt32(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("The input string must not be null or empty.");
+            }
+
+            if (int.TryParse(value, out var result))
+            {
+                return result;
+            }
+
+            throw new FormatException("The input string is not in a valid format for an Int32 value.");
+        }
+
+        /// <summary>
+        /// Converts a string to an Int64 value.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>The Int64 value represented by the string.</returns>
+        public static long ToInt64(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("The input string must not be null or empty.");
+            }
+
+            if (long.TryParse(value, out var result))
+            {
+                return result;
+            }
+
+            throw new FormatException("The input string is not in a valid format for an Int64 value.");
+        }
+
+        /// <summary>
+        /// Converts a string to a decimal value.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>The decimal value represented by the string.</returns>
+        public static decimal ToDecimal(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("The input string must not be null or empty.");
+            }
+
+            var numberFormatInfo = new NumberFormatInfo { NumberDecimalSeparator = "," };
+            if (decimal.TryParse(value, NumberStyles.Any, numberFormatInfo, out var result))
+            {
+                return result;
+            }
+
+            numberFormatInfo = new NumberFormatInfo { NumberDecimalSeparator = "." };
+            if (decimal.TryParse(value, NumberStyles.Any, numberFormatInfo, out result))
+            {
+                return result;
+            }
+
+            throw new FormatException("The input string is not in a valid format for a decimal value.");
+        }
+
+        /// <summary>
+        /// Converts a string to a float value.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>The float value represented by the string.</returns>
+        public static float ToFloat(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("The input string must not be null or empty.");
+            }
+
+            var numberFormatInfo = new NumberFormatInfo { NumberDecimalSeparator = "," };
+            if (float.TryParse(value, NumberStyles.Any, numberFormatInfo, out var result))
+            {
+                return result;
+            }
+
+            numberFormatInfo = new NumberFormatInfo { NumberDecimalSeparator = "." };
+            if (float.TryParse(value, NumberStyles.Any, numberFormatInfo, out result))
+            {
+                return result;
+            }
+
+            throw new FormatException("The input string is not in a valid format for a float value.");
+        }
+
+        /// <summary>
+        /// Converts a string to a boolean value.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>The boolean value represented by the string.</returns>
+        public static bool ToBoolean(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("The input string must not be null or empty.");
+            }
+
+            if (value.IsAllNum() && value.Length == 1)
+            {
+                switch (value[..1])
+                {
+                    case "1":
+                        return true;
+                    case "0":
+                        return false;
+                }
+            }
+
+            if (bool.TryParse(value, out var result))
+            {
+                return result;
+            }
+
+            throw new FormatException("The input string is not in a valid format for a boolean value.");
+        }
+
+        /// <summary>
+        /// Extracts the text inside a quote inside a string.
+        /// </summary>
+        /// <param name="value">The string to extract from.</param>
+        /// <param name="quote">The quote character to use (single quote by default).</param>
+        /// <returns>The extracted text inside the quote.</returns>
+        public static string ExtractQuotedText(this string value, char quote = '\'')
+        {
+            // Check if the string is null or empty
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("The input string must not be null or empty.");
+            }
+
+            var regex = new Regex($"{quote}(.*?){quote}");
+            var match = regex.Match(value);
+
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+
+            throw new ArgumentException("The input string does not contain a quote character.");
         }
     }
 }
