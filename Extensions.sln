@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExtensions", "StringE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExtensions.Tests", "StringExtensions.Tests\StringExtensions.Tests.csproj", "{9718F987-966C-4F70-A6B2-91F808BEAF1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayExtensions", "ArrayExtensions\ArrayExtensions.csproj", "{68DF4A5D-57E9-4B7C-BB45-E4D8785E0ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayExtensions.Tests", "ArrayExtensions.Tests\ArrayExtensions.Tests.csproj", "{284323EA-2A24-4047-81C1-8A6D835AD656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{9718F987-966C-4F70-A6B2-91F808BEAF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9718F987-966C-4F70-A6B2-91F808BEAF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9718F987-966C-4F70-A6B2-91F808BEAF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68DF4A5D-57E9-4B7C-BB45-E4D8785E0ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DF4A5D-57E9-4B7C-BB45-E4D8785E0ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DF4A5D-57E9-4B7C-BB45-E4D8785E0ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DF4A5D-57E9-4B7C-BB45-E4D8785E0ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284323EA-2A24-4047-81C1-8A6D835AD656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284323EA-2A24-4047-81C1-8A6D835AD656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284323EA-2A24-4047-81C1-8A6D835AD656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284323EA-2A24-4047-81C1-8A6D835AD656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
