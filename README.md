@@ -27,6 +27,16 @@ The following methods are included in the StringExtensions class:
 * **ToJson**: This method generates a JSON string from a source string with the format "key:value|Key:value".
 * **Reverse**: This method reverses the order of the characters in a string.
 * **IsAlpha**: This method determines whether a string consists only of alphabetic characters
+* **ToInt16**: This method converts a string to an int16 value
+* **ToInt32**: This method converts a string to an int32 value
+* **ToInt64**: This method converts a string to an int64 value
+* **ToDecimal**: This method converts a string to an decimal value
+* **ToFloat**: This method converts a string to an float value
+* **ToBoolean**: This method converts a string to an boolean value
+* **ExtractQuotedText**: This method extracts the text inside a quote inside a string.
+
+
+
 ### Usage
 
 To use these extension methods, simply call them on any string value like this:

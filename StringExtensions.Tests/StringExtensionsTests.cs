@@ -569,7 +569,7 @@ namespace StringExtensions.Tests
             const string expectedOutput = "This is the text to extract";
 
             // Act
-            var actualOutput = input.ExtractQuotedText('\'');
+            var actualOutput = input.ExtractQuotedText();
 
             // Assert
             actualOutput.Should().Be(expectedOutput);
@@ -596,7 +596,7 @@ namespace StringExtensions.Tests
             const string input = "function(parameter1, This is the text to extract')";
 
             // Act
-            Action action = () => input.ExtractQuotedText('\'');
+            Action action = () => input.ExtractQuotedText();
 
             // Assert
             action.Should().Throw<ArgumentException>();
@@ -609,7 +609,7 @@ namespace StringExtensions.Tests
             string input = null!;
 
             // Act
-            Action action = () => input.ExtractQuotedText('\'');
+            Action action = () => input.ExtractQuotedText();
 
             // Assert
             action.Should().Throw<ArgumentException>();
@@ -622,7 +622,7 @@ namespace StringExtensions.Tests
             const string input = "";
 
             // Act
-            Action action = () => input.ExtractQuotedText('\'');
+            Action action = () => input.ExtractQuotedText();
 
             // Assert
             action.Should().Throw<ArgumentException>();
