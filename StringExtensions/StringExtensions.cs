@@ -23,6 +23,7 @@
 
 namespace StringExtensions
 {
+    using System.Data;
     using System.Globalization;
     using System.Text;
     using System.Text.RegularExpressions;
@@ -441,6 +442,19 @@ namespace StringExtensions
             }
 
             throw new ArgumentException("The input string does not contain a quote character.");
+        }
+
+        /// <summary>
+        /// Evaluates a mathematical formula represented as a string and returns the result.
+        /// </summary>
+        /// <param name="value">The input string that represents the formula.</param>
+        /// <returns>The calculated result as a string.</returns>
+        public static string Calculate(this string value)
+        {
+            value = value.Replace(" ", "");
+            var dt = new DataTable();
+            var result = dt.Compute(value, "");
+            return result.ToString() ?? string.Empty;
         }
     }
 }

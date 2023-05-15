@@ -23,6 +23,7 @@
 
 namespace StringExtensions.Tests
 {
+    using System.Globalization;
     using FluentAssertions;
 
     public class StringExtensionsTests
@@ -626,6 +627,85 @@ namespace StringExtensions.Tests
 
             // Assert
             action.Should().Throw<ArgumentException>();
+        }
+
+        [Fact]
+        public void Calculate_ShouldReturnCorrectResult_ForSimpleAddition()
+        {
+            // Arrange
+            const string input = "1 + 2";
+
+            // Act
+            var result = input.Calculate();
+
+            // Assert
+            result.Should().Be("3");
+        }
+
+        [Fact]
+        public void Calculate_ShouldReturnCorrectResult_ForSimpleMultiplication()
+        {
+            // Arrange
+            const string input = "2 * 3";
+
+            // Act
+            var result = input.Calculate();
+
+            // Assert
+            result.Should().Be("6");
+        }
+
+        [Fact]
+        public void Calculate_ShouldReturnCorrectResult_ForSimpleDivision()
+        {
+            // Arrange
+            const string input = "4 / 2";
+
+            // Act
+            var result = input.Calculate();
+
+            // Assert
+            result.Should().Be("2");
+        }
+
+        [Fact]
+        public void Calculate_ShouldReturnCorrectResult_ForParentheses()
+        {
+            // Arrange
+            const string input = "2 * (1 + 2)";
+
+            // Act
+            var result = input.Calculate();
+
+            // Assert
+            result.Should().Be("6");
+        }
+
+        [Fact]
+        public void Calculate_ShouldReturnCorrectResult_ForMixedOperators()
+        {
+            // Arrange
+            const string input = "1 + 2 * (3 / 4)";
+            CultureInfo.CurrentCulture = new CultureInfo("en-US");
+
+            // Act
+            var result = input.Calculate();
+
+            // Assert
+            result.Should().Be("2.5");
+        }
+
+        [Fact]
+        public void Calculate_ShouldReturnCorrectResult_ForNegativeNumbers()
+        {
+            // Arrange
+            const string input = "8*2-4*6";
+
+            // Act
+            var result = input.Calculate();
+
+            // Assert
+            result.Should().Be("-8");
         }
     }
 }

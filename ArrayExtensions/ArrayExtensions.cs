@@ -174,10 +174,32 @@ namespace ArrayExtensions
                 Array.Copy(array, index + 1, array, index - removedCount, array.Length - index - 1);
                 removedCount++;
             }
+
             Array.Resize(ref array, array.Length - indices.Count);
 
             return array;
         }
 
+        /// <summary>
+        /// Determines whether the specified array is null or empty.
+        /// </summary>
+        /// <typeparam name="T">The type of the elements in the array.</typeparam>
+        /// <param name="array">The array to check.</param>
+        /// <returns>true if the array is null or empty; otherwise, false.</returns>
+        public static bool IsNullOrEmpty<T>(this T[]? array)
+        {
+            return array == null || array.Length == 0;
+        }
+
+        /// <summary>
+        /// Determines whether the specified array is null or all of its elements are null.
+        /// </summary>
+        /// <typeparam name="T">The type of the elements in the array.</typeparam>
+        /// <param name="array">The array to check.</param>
+        /// <returns>true if the array is null or all of its elements are null; otherwise, false.</returns>
+        public static bool IsNullOrAllElementsNull<T>(this T[]? array)
+        {
+            return array == null || array.All(t => t == null);
+        }
     }
 }

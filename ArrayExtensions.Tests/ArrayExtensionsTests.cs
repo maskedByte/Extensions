@@ -251,5 +251,83 @@ namespace ArrayExtensions.Tests
             // Assert
             action.Should().Throw<ArgumentNullException>();
         }
+
+        [Fact]
+        public void IsNullOrAllElementsNull_ShouldReturnTrue_WhenArrayIsNull()
+        {
+            // Arrange
+            int[] numbers = null;
+
+            // Act
+            var result = numbers.IsNullOrAllElementsNull();
+
+            // Assert
+            result.Should().BeTrue();
+        }
+
+        [Fact]
+        public void IsNullOrAllElementsNull_ShouldReturnTrue_WhenAllElementsAreNull()
+        {
+            // Arrange
+            string[] names = { null, null, null };
+
+            // Act
+            var result = names.IsNullOrAllElementsNull();
+
+            // Assert
+            result.Should().BeTrue();
+        }
+
+        [Fact]
+        public void IsNullOrAllElementsNull_ShouldReturnFalse_WhenSomeElementsAreNotNull()
+        {
+            // Arrange
+            string[] names = { null, "Alice", null };
+
+            // Act
+            var result = names.IsNullOrAllElementsNull();
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public void IsNullOrEmpty_ShouldReturnTrue_WhenArrayIsNull()
+        {
+            // Arrange
+            int[] numbers = null;
+
+            // Act
+            var result = numbers.IsNullOrEmpty();
+
+            // Assert
+            result.Should().BeTrue();
+        }
+
+        [Fact]
+        public void IsNullOrEmpty_ShouldReturnTrue_WhenArrayIsEmpty()
+        {
+            // Arrange
+            var names = Array.Empty<string>();
+
+            // Act
+            var result = names.IsNullOrEmpty();
+
+            // Assert
+            result.Should().BeTrue();
+        }
+
+        [Fact]
+        public void IsNullOrEmpty_ShouldReturnFalse_WhenArrayIsNotEmpty()
+        {
+            // Arrange
+            int[] numbers = { 1, 2, 3 };
+
+            // Act
+            var result = numbers.IsNullOrEmpty();
+
+            // Assert
+            result.Should().BeFalse();
+        }
     }
 }
