@@ -23,7 +23,7 @@ namespace ArrayExtensions
     public static class ArrayExtensions
     {
         /// <summary>
-        /// Appends one or more elements to the end of an array.
+        ///     Appends one or more elements to the end of an array.
         /// </summary>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
         /// <param name="array">The array to append to.</param>
@@ -47,7 +47,7 @@ namespace ArrayExtensions
         }
 
         /// <summary>
-        /// Clears all elements in an array.
+        ///     Clears all elements in an array.
         /// </summary>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
         /// <param name="array">The array to clear.</param>
@@ -62,7 +62,7 @@ namespace ArrayExtensions
         }
 
         /// <summary>
-        /// Counts the number of occurrences of a value in an array.
+        ///     Counts the number of occurrences of a value in an array.
         /// </summary>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
         /// <param name="array">The array to search.</param>
@@ -79,7 +79,7 @@ namespace ArrayExtensions
         }
 
         /// <summary>
-        /// Finds the index of the first occurrence of a value in an array.
+        ///     Finds the index of the first occurrence of a value in an array.
         /// </summary>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
         /// <param name="array">The array to search.</param>
@@ -104,7 +104,7 @@ namespace ArrayExtensions
         }
 
         /// <summary>
-        /// Inserts a value into an array at a specified index.
+        ///     Inserts a value into an array at a specified index.
         /// </summary>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
         /// <param name="array">The array to insert into.</param>
@@ -132,7 +132,7 @@ namespace ArrayExtensions
         }
 
         /// <summary>
-        /// Reverts the order of the elements in an array.
+        ///     Reverts the order of the elements in an array.
         /// </summary>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
         /// <param name="array">The array to revert.</param>
@@ -147,7 +147,7 @@ namespace ArrayExtensions
         }
 
         /// <summary>
-        /// Removes all occurrences of a specific element from an array.
+        ///     Removes all occurrences of a specific element from an array.
         /// </summary>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
         /// <param name="array">The array to remove from.</param>
@@ -181,7 +181,7 @@ namespace ArrayExtensions
         }
 
         /// <summary>
-        /// Determines whether the specified array is null or empty.
+        ///     Determines whether the specified array is null or empty.
         /// </summary>
         /// <typeparam name="T">The type of the elements in the array.</typeparam>
         /// <param name="array">The array to check.</param>
@@ -192,7 +192,7 @@ namespace ArrayExtensions
         }
 
         /// <summary>
-        /// Determines whether the specified array is null or all of its elements are null.
+        ///     Determines whether the specified array is null or all of its elements are null.
         /// </summary>
         /// <typeparam name="T">The type of the elements in the array.</typeparam>
         /// <param name="array">The array to check.</param>

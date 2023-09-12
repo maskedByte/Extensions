@@ -29,12 +29,12 @@ namespace StringExtensions
     using System.Text.RegularExpressions;
 
     /// <summary>
-    /// Class to provide string extension methods
+    ///     Class to provide string extension methods
     /// </summary>
     public static class StringExtensions
     {
         /// <summary>
-        /// Capitalizes the first character of the specified string.
+        ///     Capitalizes the first character of the specified string.
         /// </summary>
         /// <param name="value">The string to capitalize.</param>
         /// <returns>A new string with the first character capitalized, or the original string if it is null or empty.</returns>
@@ -56,7 +56,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Counts the number of occurrences of a specified character in a string.
+        ///     Counts the number of occurrences of a specified character in a string.
         /// </summary>
         /// <param name="value">The string to search in.</param>
         /// <param name="search">The character to count.</param>
@@ -69,7 +69,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Counts the number of occurrences of a specified string in another string.
+        ///     Counts the number of occurrences of a specified string in another string.
         /// </summary>
         /// <param name="value">The string to search in.</param>
         /// <param name="search">The string to count.</param>
@@ -103,7 +103,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string consists only of numeric characters.
+        ///     Determines whether a string consists only of numeric characters.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string consists only of numeric characters, false otherwise.</returns>
@@ -114,7 +114,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string consists only of ASCII characters.
+        ///     Determines whether a string consists only of ASCII characters.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string consists only of ASCII characters, false otherwise.</returns>
@@ -124,7 +124,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string is encoded in UTF-8.
+        ///     Determines whether a string is encoded in UTF-8.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string is encoded in UTF-8, false otherwise.</returns>
@@ -139,7 +139,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string is encoded in UTF-16.
+        ///     Determines whether a string is encoded in UTF-16.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string is encoded in UTF-16, false otherwise.</returns>
@@ -154,7 +154,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string represents a decimal number.
+        ///     Determines whether a string represents a decimal number.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string represents a decimal number, false otherwise.</returns>
@@ -164,7 +164,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string is a valid C# identifier.
+        ///     Determines whether a string is a valid C# identifier.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string is a valid C# identifier, false otherwise.</returns>
@@ -192,7 +192,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string consists only of lowercase characters.
+        ///     Determines whether a string consists only of lowercase characters.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string consists only of lowercase characters, false otherwise.</returns>
@@ -202,7 +202,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string consists only of uppercase characters.
+        ///     Determines whether a string consists only of uppercase characters.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string consists only of uppercase characters, false otherwise.</returns>
@@ -212,7 +212,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Generates a JSON string from a source string with the format "key:value|Key:value ...".
+        ///     Generates a JSON string from a source string with the format "key:value|Key:value ...".
         /// </summary>
         /// <param name="value">The source string.</param>
         /// <returns>A JSON string representing the key-value pairs in the source string.</returns>
@@ -243,7 +243,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Reverses the order of the characters in a string.
+        ///     Reverses the order of the characters in a string.
         /// </summary>
         /// <param name="value">The string to reverse.</param>
         /// <returns>The reversed string.</returns>
@@ -265,7 +265,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Determines whether a string consists only of alphabetic characters.
+        ///     Determines whether a string consists only of alphabetic characters.
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>True if the string consists only of alphabetic characters, false otherwise.</returns>
@@ -275,7 +275,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Converts a string to an Int16 value.
+        ///     Converts a string to an Int16 value.
         /// </summary>
         /// <param name="value">The string to convert.</param>
         /// <returns>The Int16 value represented by the string.</returns>
@@ -295,7 +295,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Converts a string to an Int32 value.
+        ///     Converts a string to an Int32 value.
         /// </summary>
         /// <param name="value">The string to convert.</param>
         /// <returns>The Int32 value represented by the string.</returns>
@@ -315,7 +315,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Converts a string to an Int64 value.
+        ///     Converts a string to an Int64 value.
         /// </summary>
         /// <param name="value">The string to convert.</param>
         /// <returns>The Int64 value represented by the string.</returns>
@@ -335,7 +335,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Converts a string to a decimal value.
+        ///     Converts a string to a decimal value.
         /// </summary>
         /// <param name="value">The string to convert.</param>
         /// <returns>The decimal value represented by the string.</returns>
@@ -362,7 +362,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Converts a string to a float value.
+        ///     Converts a string to a float value.
         /// </summary>
         /// <param name="value">The string to convert.</param>
         /// <returns>The float value represented by the string.</returns>
@@ -389,7 +389,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Converts a string to a boolean value.
+        ///     Converts a string to a boolean value.
         /// </summary>
         /// <param name="value">The string to convert.</param>
         /// <returns>The boolean value represented by the string.</returns>
@@ -420,7 +420,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Extracts the text inside a quote inside a string.
+        ///     Extracts the text inside a quote inside a string.
         /// </summary>
         /// <param name="value">The string to extract from.</param>
         /// <param name="quote">The quote character to use (single quote by default).</param>
@@ -445,7 +445,7 @@ namespace StringExtensions
         }
 
         /// <summary>
-        /// Evaluates a mathematical formula represented as a string and returns the result.
+        ///     Evaluates a mathematical formula represented as a string and returns the result.
         /// </summary>
         /// <param name="value">The input string that represents the formula.</param>
         /// <returns>The calculated result as a string.</returns>
