@@ -243,7 +243,7 @@ namespace ArrayExtensions.Tests
         public void Remove_ShouldThrowArgumentNullExceptionForNullArray()
         {
             // Arrange
-            int[] array = null;
+            int[] array = null!;
 
             // Act
             Action action = () => array.Remove(3);
@@ -256,7 +256,7 @@ namespace ArrayExtensions.Tests
         public void IsNullOrAllElementsNull_ShouldReturnTrue_WhenArrayIsNull()
         {
             // Arrange
-            int[] numbers = null;
+            int[] numbers = null!;
 
             // Act
             var result = numbers.IsNullOrAllElementsNull();
@@ -269,7 +269,7 @@ namespace ArrayExtensions.Tests
         public void IsNullOrAllElementsNull_ShouldReturnTrue_WhenAllElementsAreNull()
         {
             // Arrange
-            string[] names = { null, null, null };
+            string[] names = { null!, null!, null! };
 
             // Act
             var result = names.IsNullOrAllElementsNull();
@@ -282,7 +282,7 @@ namespace ArrayExtensions.Tests
         public void IsNullOrAllElementsNull_ShouldReturnFalse_WhenSomeElementsAreNotNull()
         {
             // Arrange
-            string[] names = { null, "Alice", null };
+            string[] names = { null!, "Alice", null! };
 
             // Act
             var result = names.IsNullOrAllElementsNull();
@@ -295,7 +295,7 @@ namespace ArrayExtensions.Tests
         public void IsNullOrEmpty_ShouldReturnTrue_WhenArrayIsNull()
         {
             // Arrange
-            int[] numbers = null;
+            int[] numbers = null!;
 
             // Act
             var result = numbers.IsNullOrEmpty();
