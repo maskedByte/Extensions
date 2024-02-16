@@ -707,5 +707,83 @@ namespace StringExtensions.Tests
             // Assert
             result.Should().Be("-8");
         }
+
+        [Fact]
+        public void ContainsRepeatedCharacters_ShouldReturnTrue_ForRepeatedCharacters()
+        {
+            // Arrange
+            const string input = "aaabbbccc";
+
+            // Act
+            var result = input.ContainsRepeatedCharacters(3);
+
+            // Assert
+            result.Should().BeTrue();
+        }
+
+        [Fact]
+        public void ContainsRepeatedCharacters_ShouldReturnFalse_ForNonRepeatedCharacters()
+        {
+            // Arrange
+            const string input = "abc";
+
+            // Act
+            var result = input.ContainsRepeatedCharacters(3);
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public void ContainsRepeatedCharacters_ShouldReturnFalse_ForEmptyString()
+        {
+            // Arrange
+            const string input = "";
+
+            // Act
+            var result = input.ContainsRepeatedCharacters(3);
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public void ContainsRepeatedCharacters_ShouldReturnFalse_ForNullString()
+        {
+            // Arrange
+            string input = null!;
+
+            // Act
+            var result = input.ContainsRepeatedCharacters(3);
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public void ContainsRepeatedCharacters_ShouldReturnFalse_ForStringShorterThanRepetition()
+        {
+            // Arrange
+            const string input = "aa";
+
+            // Act
+            var result = input.ContainsRepeatedCharacters(3);
+
+            // Assert
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public void ContainsRepeatedCharacters_ShouldReturnTrue_ForStringEqualToRepetition()
+        {
+            // Arrange
+            const string input = "aaa";
+
+            // Act
+            var result = input.ContainsRepeatedCharacters(3);
+
+            // Assert
+            result.Should().BeTrue();
+        }
     }
 }

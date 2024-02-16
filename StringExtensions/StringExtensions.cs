@@ -456,5 +456,48 @@ namespace StringExtensions
             var result = dt.Compute(value, "");
             return result.ToString() ?? string.Empty;
         }
+
+        /// <summary>
+        ///     Determines whether a string contains repeated characters.
+        /// </summary>
+        /// <param name="value">The string to check.</param>
+        /// <param name="maxRepeats">The maximum number of repeated characters allowed.</param>
+        /// <returns>True if the string contains repeated characters, false otherwise.</returns>
+        /// <remarks>
+        ///     This method checks for repeated characters in a string, up to a specified maximum number of repeats.
+        ///     For example, if the maximum number of repeats is 3, the method will return true if the string contains
+        ///     any character that is repeated 3 or more times in a row.
+        /// </remarks>
+        public static bool ContainsRepeatedCharacters(this string value, int maxRepeats)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return false;
+            }
+
+            for (var i = 0; i < value.Length - maxRepeats; i++)
+            {
+                var currentChar = value[i];
+                var repeated = true;
+
+                for (var j = 1; j < maxRepeats; j++)
+                {
+                    if (value[i + j] == currentChar)
+                    {
+                        continue;
+                    }
+
+                    repeated = false;
+                    break;
+                }
+
+                if (repeated)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }
